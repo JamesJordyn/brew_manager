@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Homebrew 交互式管理工具（双语版）
+# Homebrew 交互式管理工具
 # 功能：通过菜单选择执行 Homebrew 各种操作
 # 作者：JamesJordyn
 # 说明：本脚本基于 MIT 许可证开源，可自由修改，但请保留原作者信息
