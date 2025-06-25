@@ -19,8 +19,7 @@
 ### 使用步骤
 1. 在终端中输入一下命令运行脚本：
    ```bash
-   chmod +x brew_manager.sh
-   cd /tmp; wget --no-check-certificate -O run.sh https://raw.githubusercontent.com/JamesJordyn/brew_manager/refs/heads/main/run.sh; chmod +x ./run.sh; ./run.sh
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JamesJordyn/brew_manager/refs/heads/main/run.sh)"
    ```
 2. 根据菜单提示输入数字选择所需功能
 
