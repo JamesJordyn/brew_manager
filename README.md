@@ -1,4 +1,4 @@
-# Homebrew 交互式管理工具 README
+# Homebrew 交互式管理工具
 
 ## 中文说明
 
