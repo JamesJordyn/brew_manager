@@ -17,16 +17,12 @@
 - 检查 Homebrew 运行环境状态
 
 ### 使用步骤
-1. 将脚本保存为 `brew_manager.sh`
-2. 在终端中赋予执行权限：
+1. 在终端中输入一下命令运行脚本：
    ```bash
    chmod +x brew_manager.sh
+   cd /tmp; wget --no-check-certificate -O run.sh https://raw.githubusercontent.com/JamesJordyn/brew_manager/refs/heads/main/run.sh; chmod +x ./run.sh; ./run.sh
    ```
-3. 运行脚本：
-   ```bash
-   ./brew_manager.sh
-   ```
-4. 根据菜单提示输入数字选择所需功能
+2. 根据菜单提示输入数字选择所需功能
 
 ### 注意事项
 - 使用前请确保已安装 Homebrew（[官方安装教程](https://brew.sh/)）
