@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Homebrew 交互式管理脚本（版权增强版）
+# Homebrew 交互式管理脚本
 # 功能：通过菜单选择执行 Homebrew 各种操作
 # 作者：JamesJordyn
 # 说明：本脚本基于 MIT 许可证开源，可自由修改，但请保留原作者信息
@@ -25,7 +25,7 @@ show_copyright() {
 
 show_title() {
     clear
-    show_copyright()
+    show_copyright  # 修复：移除多余的括号
     echo -e "${GREEN}======================================${NC}"
     echo -e "${GREEN}         Homebrew 交互式管理工具        ${NC}"
     echo -e "${GREEN}======================================${NC}"
