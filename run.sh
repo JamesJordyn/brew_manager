@@ -79,6 +79,8 @@ load_language() {
         UPDATING="正在更新 Homebrew..."
         UPDATE_SUCCESS="Homebrew 更新完成"
         PROMPT_INSTALL="请输入要安装的软件包名称: "
+        UPDATE_HAS_OUTDATED="您有过时的软件包需要升级。是否要升级所有软件包？(y/n): "
+        UPDATE_NO_OUTDATED="没有过时的软件包需要升级。按 Enter 键返回主菜单。"
     else
         TITLE="Homebrew Interactive Management Tool"
         COPYRIGHT="Author: JamesJordyn\n  This script is open source under the MIT license\n  You are free to modify it, but please retain the original author information"
@@ -129,6 +131,8 @@ load_language() {
         UPDATING="Updating Homebrew..."
         UPDATE_SUCCESS="Homebrew update completed"
         PROMPT_INSTALL="Enter the package name to install: "
+        UPDATE_HAS_OUTDATED="You have outdated packages to upgrade. Do you want to upgrade all packages? (y/n): "
+        UPDATE_NO_OUTDATED="There are no outdated packages to upgrade. Press Enter to return to the main menu."
     fi
 }
 
@@ -163,9 +167,19 @@ show_menu() {
 
 update_brew() {
     echo -e "${YELLOW}$UPDATING${NC}"
-    brew update
+    update_output=$(brew update)
     echo -e "${GREEN}$UPDATE_SUCCESS${NC}"
-    pause
+
+    if echo "$update_output" | grep -q "You have .* outdated formulae installed."; then
+        read -p "$UPDATE_HAS_OUTDATED" upgrade_choice
+        if [[ "$upgrade_choice" == [yY] ]]; then
+            upgrade_packages
+        else
+            pause
+        fi
+    else
+        read -p "$UPDATE_NO_OUTDATED"
+    fi
 }
 
 upgrade_packages() {
